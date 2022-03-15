@@ -4,11 +4,11 @@ server:
 spring:
   application:
     name: user-service
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: guest
-    password: guest
+  # rabbitmq:
+  #   host: 127.0.0.1
+  #   port: 5672
+  #   username: guest
+  #   password: guest
   h2:
     console:
       enabled: true
@@ -33,7 +33,7 @@ greeting:
 
 logging:
   level:
-    com.example.userservice: DEBUG
+    com.example.userservice.client: DEBUG
 
 management:
   endpoints:
@@ -44,3 +44,11 @@ management:
 token:
  expiration_time: 86400000
  secret: user_token
+
+gateway:
+  ip: 3.35.18.30
+
+order_service:
+  uri: http://ORDER-SERVICE/order-service/%s/order
+  exception:
+    order_is_empty: User's order list is empty.
