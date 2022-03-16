@@ -46,7 +46,7 @@ token:
  secret: user_token
 
 gateway:
-  ip: 3.35.18.30
+  ip: 3.38.169.236
 
 order_service:
   uri: http://ORDER-SERVICE/order-service/%s/order
